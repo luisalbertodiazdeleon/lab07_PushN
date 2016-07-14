@@ -52,6 +52,7 @@
 		A052B5761D372CA00004C66A /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A052B5741D372CA00004C66A /* TableViewCell.xib */; };
 		A052B57C1D37355D0004C66A /* ThirdPage.m in Sources */ = {isa = PBXBuildFile; fileRef = A052B57B1D37355D0004C66A /* ThirdPage.m */; };
 		A052B57E1D373F340004C66A /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A052B57D1D373F340004C66A /* Podfile */; };
+		A052B5801D37512B0004C66A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A052B57F1D37512B0004C66A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,6 +111,7 @@
 		A052B57A1D37355D0004C66A /* ThirdPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdPage.h; sourceTree = "<group>"; };
 		A052B57B1D37355D0004C66A /* ThirdPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdPage.m; sourceTree = "<group>"; };
 		A052B57D1D373F340004C66A /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		A052B57F1D37512B0004C66A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 		A023F9A51D37087200C48C56 /* Lab07_Push */ = {
 			isa = PBXGroup;
 			children = (
+				A052B57F1D37512B0004C66A /* GoogleService-Info.plist */,
 				A052B5281D3726E90004C66A /* estados */,
 				A023F9C21D370FF500C48C56 /* cells */,
 				A023F9C11D3708A000C48C56 /* controllers */,
@@ -403,6 +406,7 @@
 				A023F9C71D37102B00C48C56 /* CellStart.xib in Resources */,
 				A052B55F1D3726E90004C66A /* jalostotitlan.jpg in Resources */,
 				A052B5671D3726E90004C66A /* Temixco.jpg in Resources */,
+				A052B5801D37512B0004C66A /* GoogleService-Info.plist in Resources */,
 				A052B57E1D373F340004C66A /* Podfile in Resources */,
 				A052B5631D3726E90004C66A /* mor.jpg in Resources */,
 				A052B5541D3726E90004C66A /* jesusMaria.jpg.gif in Resources */,
