@@ -7,15 +7,21 @@
 //
 
 #import "ThirdPage.h"
-
+@import GoogleMaps;
 @interface ThirdPage ()
 
 @end
 
-@implementation ThirdPage
+@implementation ThirdPage{
+    GMSMapView *mapView_;
+    NSString *municipio_;
+    long latitud;
+    long longitud;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self createMap];
     // Do any additional setup after loading the view.
     if (self.infoEstado == 0)
     {
@@ -67,5 +73,65 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)createMap {
+    if (self.infoEstado == 0)
+    {
+        if (self.infoMunicipio == 0)
+        {
+            
+            //self.LabelMun.text = @"Asientos";
+            municipio_= @"*Asientos";
+            latitud=22.2393216;
+            longitud=-102.1997842;
+        }
+        else if (self.infoMunicipio == 1)
+        {
+            //self.LabelMun.text = @"Calvillo";
+            municipio_= @"*Calvillo";
+            latitud=21.846954;
+            longitud=-102.716095;
+        }
+        else if (self.infoMunicipio == 2)
+        {
+            //self.LabelMun.text = @"Jesus Maria";
+            municipio_= @"*Jesus Maria";
+            latitud=21.961825;
+            longitud=-102.344206;
+        }
+        else if (self.infoMunicipio == 3)
+        {
+            //self.LabelMun.text = @"Pabellon de Arteaga";
+            municipio_= @"Pabellon de Arteaga";
+            latitud=22.142999;
+            longitud=-102.274159;
+            
+        }
+        else if(self.infoMunicipio == 4)
+        {
+            //self.LabelMun.text = @"Rincon de Romos";
+            municipio_= @"Rincon de Romos";
+            latitud=22.230804;
+            longitud=-102.320812;
+            
+        }
+    }
+    
+    // Create a GMSCameraPosition that tells the map to display the
+    // coordinate -33.86,151.20 at zoom level 6.
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:latitud
+                                                            longitude:longitud
+                                                                 zoom:17];
+    mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    mapView_.myLocationEnabled = YES;
+    self.view = mapView_;
+    
+    // Creates a marker in the center of the map.
+    GMSMarker *marker = [[GMSMarker alloc] init];
+    marker.position = CLLocationCoordinate2DMake(latitud, longitud);
+    marker.title = municipio_;
+    marker.snippet = @"Municipio";
+    marker.map = mapView_;
+}
 
 @end
