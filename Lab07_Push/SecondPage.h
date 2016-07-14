@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SecondPage.h
 //  Lab07_Push
 //
 //  Created by Luis on 7/13/16.
@@ -7,10 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CellStart.h"
-#import "SecondPage.h"
-@interface Start : UIViewController
-
-
+#import "TableViewCell.h"
+#import "ThirdPage.h"
+@interface SecondPage : UIViewController
+@property int *infoFromHome;
 @end
-

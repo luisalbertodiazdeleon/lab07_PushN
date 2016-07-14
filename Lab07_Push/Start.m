@@ -11,7 +11,7 @@
 @interface Start ()
 @property NSMutableArray *estadosArray;
 @property NSMutableArray *escudosArray;
-
+@property int *infotest;
 
 @end
 
@@ -34,7 +34,7 @@
 //-------------------------------------------------------------------------------
 - (void)initController {
     self.estadosArray   = [[NSMutableArray alloc] initWithObjects: @"Aguascalientes", @"Guanajuato", @"Jalisco", @"Morelos", @"Nuevo Leon", nil];
-    self.escudosArray   = [[NSMutableArray alloc] initWithObjects: @"ags.png", @"guan.jpg", @"jal.jpg", @"mor.jpg", @"NL.jpg", nil];
+    self.escudosArray   = [[NSMutableArray alloc] initWithObjects: @"ags.png", @"guan.jpg", @"jal.jpg", @"mor.jpg", @"Escudo-del-Estado-de-Nuevo-León.jpg", nil];
 }
 
 /****************************************************************/
@@ -61,18 +61,32 @@
         cell = [tableView dequeueReusableCellWithIdentifier:@"CellStart"];
     }
     //Fill cell with info from arrays
-    //cell.lblDD.text       = self.estadosArray[indexPath.row];
-    //cell.ImagD.image   = [UIImage imageNamed:self.escudosArray[indexPath.row]];
+    cell.lblCell.text       = self.estadosArray[indexPath.row];
+    cell.imgCell.image   = [UIImage imageNamed:self.escudosArray[indexPath.row]];
     
     return cell;
 }
 //-------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //----self.infotest        = indexPath.row;
+    self.infotest        = indexPath.row;
     // self.stDescriptionSelected  = self.destinationDescriptions[indexPath.row];
     // self.stPhotoSelected        = self.destinationPhotos[indexPath.row];
-    //-----[self performSegueWithIdentifier:@"SecondPage" sender:self];
+    [self performSegueWithIdentifier:@"SecondPage" sender:self];
+}
+
+/**********************************************************************************************/
+#pragma mark - Navigation
+/**********************************************************************************************/
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.destinationViewController isKindOfClass:[SecondPage class]]) {
+        SecondPage *sp     = [segue destinationViewController];
+        sp.infoFromHome     = self.infotest;
+        // destination.destinationDescription  = self.stDescriptionSelected;
+        // destination.destinationPhoto        = self.stPhotoSelected;
+        
+    }
 }
 
 @end
