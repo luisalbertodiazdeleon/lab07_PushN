@@ -340,6 +340,7 @@
 				A023F9BF1D37087200C48C56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
